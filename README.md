@@ -1,5 +1,5 @@
-TeX to Ebook Converter
-======================
+LaTeX to Ebook Converter
+========================
 
 tex2ebook.py is a converter for LaTeX documents to EPUB/Mobipocket. webapp.py is a web interface for tex2ebook.py. Written by Matthias Lambert and Roman Zoller.
 

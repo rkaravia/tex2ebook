@@ -1,7 +1,9 @@
 LaTeX to Ebook Converter
 ========================
 
-tex2ebook.py is a converter for LaTeX documents to EPUB/Mobipocket. webapp.py is a web interface for tex2ebook.py. Written by Matthias Lambert and Roman Zoller.
+tex2ebook.py is a converter for LaTeX documents to EPUB/Mobipocket.
+
+webapp.py is a web interface for tex2ebook.py.
 
 Requirements
 ------------
@@ -19,6 +21,12 @@ tex2ebook has so far only been tested on Unix. The following software is require
 License
 -------
 
+Written by Matthias Lambert and Roman Zoller.
 Released under [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0), the web interface contains compiled versions of
 - [jQuery](https://jquery.org/), licensed under the [MIT License](https://jquery.org/license/)
 - [Bootstrap with Jasny extensions](http://jasny.github.io/bootstrap/), licensed under [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Screenshot
+----------
+<br />
+![screenshot](screenshot.png)

@@ -1,7 +1,33 @@
 {% extends "layout.html" %}
 {% block body %}
-<h1>Ebook Conversion</h1>
-<form action="./convert" method="post" enctype="multipart/form-data">
-<input type="file" name="file"><input type="submit" value="Upload">
-</form>
+<body style="margin: auto; margin-top: 40px; width: 960px">
+<div class="uploadform">
+  <h1>Ebook Conversion</h1>
+  <form target="result" action="./convert" method="post" enctype="multipart/form-data">
+  <div class="fileupload fileupload-new" data-provides="fileupload">
+    <div class="input-append">
+      <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+      <input class="btn" type="submit" value="Upload" style="margin-left: 10px">
+    </div>
+  </div>
+  </form>
+</div>
+
+<iframe name="result" class="result-frame" style="width:100%"></iframe>
+
+<script type="text/javascript">
+function adjust_size() {
+  var header_height = 100;
+  var margin = 80;
+  $(".uploadform").height(header_height);
+  $(".result-frame").hide();
+  $(".result-frame").height($(document).height() - header_height - margin);
+  $(".result-frame").show();
+}
+$(document).ready(function() {
+  adjust_size();
+  $(window).resize(adjust_size);
+});
+</script>
+</body>
 {% endblock %}

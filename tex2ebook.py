@@ -36,7 +36,7 @@ def convert(texfile, log, ebook_ext, dest=None):
 	working_dir = get_working_dir(texfile, log)
 	
 	print "--- Working dir is %s" % working_dir
-	os.chdir(os.path.dirname(texfile))
+	os.chdir(os.path.join('./', os.path.dirname(texfile)))
 	
 	html = os.path.join(working_dir, '%s.html' % title)
 	log_hevea = os.path.join(working_dir, 'hevea.log')
@@ -60,7 +60,7 @@ def convert(texfile, log, ebook_ext, dest=None):
 	if ebook_ext == 'epub':
 		ext_options = '--no-default-epub-cover'
 	log_ebook = os.path.join(working_dir, 'ebook-convert.log')
-	ebookconvert = 'ebook-convert %s %s %s --page-breaks-before / --max-toc-links 0 >> %s' % (html, dest, ext_options, log_ebook)
+	ebookconvert = 'ebook-convert %s %s %s --page-breaks-before / --toc-threshold 0 --level1-toc //h:h2 --level2-toc //h:h3 --level3-toc //h:h4 >> %s' % (html, dest, ext_options, log_ebook)
 	print "--- Invoking ebook-convert..."
 	print ebookconvert
 	os.system(ebookconvert)
